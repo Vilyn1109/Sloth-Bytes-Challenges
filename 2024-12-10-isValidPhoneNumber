@@ -1,0 +1,23 @@
+# Check if phone number is valid : eg. (123) 456-7890
+
+import re
+
+# Regex pattern validation to compare against string.
+v_ValidNumber = r"^\(\d{3}\) \d{3}-\d{4}$"
+
+def isValidPhoneNumber ( x ) :
+    return re.match(v_ValidNumber, x) is not None
+
+
+while True :
+
+    v_entry = input ( "\nType a phone number. Type quit to quit.\n" ) 
+
+    if v_entry.upper() == "QUIT" :
+        print ( "Quitting" )
+        break
+
+    elif isValidPhoneNumber ( v_entry ) :
+        print ( "Valid" )
+    else :
+        print ( "Invalid" )
