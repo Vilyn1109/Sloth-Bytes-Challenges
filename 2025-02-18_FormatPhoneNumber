@@ -1,0 +1,34 @@
+# Goal: Generate a phone number from a list of 10 digits
+
+l_Numbers : list = [1,2,3,4,5,6,7,8,9,1]           
+
+def f_CreatePhoneNumber ( x ) :
+
+        for digit in x :
+             if not isinstance ( digit , int ) :
+                  print ("Sorry, not all items are digits.")
+                  return
+    
+        if len ( x ) != 10 :
+            print ("Sorry, incorrect amount of numbers provided.\n")
+
+        else :
+            v_FirstThreeDigits = \
+                "(" + "".join ( map ( str , x[0:3] ) ) + ") "
+
+            v_MiddleThreeDigits = \
+                "".join ( map( str , x[3:6] ) ) + "-"
+
+            v_LastFourDigits = \
+                "".join ( map( str , x[6:] ) )
+
+            # # #
+
+            v_PhoneNumber = \
+                v_FirstThreeDigits + v_MiddleThreeDigits + v_LastFourDigits
+            print ( "---" )
+            print ( v_PhoneNumber )
+
+# # #
+
+f_CreatePhoneNumber ( l_Numbers )
