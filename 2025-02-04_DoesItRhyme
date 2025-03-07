@@ -1,0 +1,38 @@
+# Check if two strings rhyme.
+# (contain the same vowels and end with the same letter.)
+
+def f_DoesRhyme () :
+
+    l_VowelReference = {'a','e','i','o','u','y'}
+
+    # Get the string and the last word.
+
+    v_Input1 = input ( "Enter string 1: ").lower()
+    v_Input2 = input ( "Enter String 2: ").lower()
+
+    v_LastWord1 = v_Input1.split ( ' ' )[-1]
+    v_LastWord2 = v_Input2.split ( ' ' )[-1]
+
+    # find the last letter and vowels and test for a match.
+
+    if v_LastWord1[-1] != v_LastWord2[-1] :
+        return False
+
+    l_FoundVowels1 = \
+        [letter for letter in v_LastWord1 if letter in l_VowelReference]
+
+    l_FoundVowels2 = \
+        [letter for letter in v_LastWord2 if letter in l_VowelReference]
+
+    return l_FoundVowels1 == l_FoundVowels2
+
+# # #
+
+if f_DoesRhyme () :
+    print ( '---' )
+    print ( "Yes, they rhyme" )
+else :
+    print ( '---' )
+    print ( "No, they don't rhyme" )
+
+print ( '---' )
